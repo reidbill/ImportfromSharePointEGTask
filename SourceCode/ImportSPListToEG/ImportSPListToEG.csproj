@@ -129,6 +129,11 @@
   <ItemGroup>
     <EmbeddedResource Include="task.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Link>README.md</Link>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy ImportSPListToEG.dll "C:\Users\bireid\AppData\Roaming\SAS\EnterpriseGuide\7.1\custom"</PostBuildEvent>
