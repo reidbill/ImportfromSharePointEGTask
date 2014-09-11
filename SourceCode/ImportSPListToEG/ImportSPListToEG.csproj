@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB75010C-7D37-4FAC-AFDA-0CCECB814475}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImportSPListToEG</RootNamespace>
+    <AssemblyName>ImportSPListToEG</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>task.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint.Client, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>references\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>references\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="SAS.EG.Controls, Version=6.100.0.0, Culture=neutral, PublicKeyToken=be58efc3b934219b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>references\SAS.EG.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="SAS.Shared, Version=6.100.0.0, Culture=neutral, PublicKeyToken=be58efc3b934219b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>references\SAS.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAS.Shared.AddIns, Version=6.100.0.0, Culture=neutral, PublicKeyToken=be58efc3b934219b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>references\SAS.Shared.AddIns.dll</HintPath>
+    </Reference>
+    <Reference Include="SAS.SharedUI, Version=6.100.0.0, Culture=neutral, PublicKeyToken=be58efc3b934219b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>references\SAS.SharedUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SAS.Tasks.Toolkit, Version=6.100.0.0, Culture=neutral, PublicKeyToken=be58efc3b934219b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>references\SAS.Tasks.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="SASInterop, Version=1.5.0.0, Culture=neutral, PublicKeyToken=be58efc3b934219b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>references\SASInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddColumn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddColumn.Designer.cs">
+      <DependentUpon>AddColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportFromSharePointListTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportFromSharePointListTaskForm.designer.cs">
+      <DependentUpon>ImportFromSharePointListTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportFromSharePointListTaskSettings.cs" />
+    <Compile Include="ImportFromSharePointTask.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListPicker.Designer.cs">
+      <DependentUpon>ListPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPColumn.cs" />
+    <Compile Include="SPColumnProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SPColumnProperties.Designer.cs">
+      <DependentUpon>SPColumnProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SPList.cs" />
+    <Compile Include="spWrap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddColumn.resx">
+      <DependentUpon>AddColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportFromSharePointListTaskForm.resx">
+      <DependentUpon>ImportFromSharePointListTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListPicker.resx">
+      <DependentUpon>ListPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPColumnProperties.resx">
+      <DependentUpon>SPColumnProperties.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="task.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy ImportSPListToEG.dll "C:\Users\bireid\AppData\Roaming\SAS\EnterpriseGuide\7.1\custom"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
